@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.word-spacing{
+    word-spacing: 5px;
+}
+.neo{
+    border-radius: 1px;
+    color: ;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;      
+}
+.no-click{
+    color: ;
+    pointer-events: none;
+}
+.text-small {
+    font-size:small;
+}
+.shadow-shine{
+    box-shadow: 0 20px 50px rgba(3, 23, 37, 0.7);
+    z-index: 3000;
+}
