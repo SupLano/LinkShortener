@@ -45,6 +45,7 @@ function App() {
   }
 
   const handleSubmit = () =>{
+    console.log(get)
    switch (get) {
       case 'short':
           validator.isURL(InputBox.current.value) ? fetch(`https://api.shrtco.de/v2/shorten?url=${InputBox.current.value}`).then( data => data.json()).then (data => {handleResultRender(data.result.short_link)})
@@ -52,8 +53,7 @@ function App() {
        break;
 
       case 'reveal':
-        validator.isURL(InputBox.current.value) ? fetch(`https://api.shrtco.de/v2/shorten?url=${InputBox.current.value}`).then( data => data.json()).then (data => {handleResultRender(data.result.short_link)})
-           : setError(true) 
+        fetch(`https://api.shrtco.de/v2/info?code=${InputBox.current.value}`).then( data => data.json()).then (data => {handleResultRender(data.result.url)})
         break;
 
       default:
