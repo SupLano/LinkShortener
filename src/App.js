@@ -92,7 +92,7 @@ function App() {
                 </div>
 
                 <div className={'w-4/5 mx-auto py-20 flex justify-center relative'}>
-                    <input disabled ref={ResultBox} className={'rounded-lg outline-none  h-11 py-3 px-10 text-center opacity-40'}></input>
+                    <input disabled ref={ResultBox} className={'rounded-lg w-2/3 outline-none  h-11 py-3 px-10 text-center opacity-40'}></input>
                     <div onClick={handleCopy}  ref={CopyBox} className={'px-4 mx-1 rounded-sm opacity-80 focus:opacity-40  transition ease-in-out delay-150 overflow-hidden'}>
                            <FaClipboard className={'h-8 w-8 opacity-90 cursor-pointer z-50 shadow-lg'} />
                     </div>
