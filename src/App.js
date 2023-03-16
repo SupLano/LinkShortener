@@ -19,10 +19,11 @@ export default function App() {
   return (
     <PageTypeContext.Provider value={{ PageType, PageTrue, PageFalse, NavRef,setPageType }}>
         <div className={'App h-screen w-screen flex bg-teal-50'}>
-                <div className='w-5/6 mx-auto my-auto flex flex-col items-stretch rounded-lg shadow-lg bg-red-400'>
+                <div className='w-5/6 mx-auto my-auto flex flex-col items-stretch rounded-lg shadow-lg bg-red-400 relative'>
                         <Nav/>
                         <Content/>
-                </div>
+                        <a href='https://github.com/SupLano/LinkShortener' target="_blank" rel="noopener noreferrer" className={'absolute -bottom-7 right-2  text-center font-extralight italic'}>Source &#8599;</a>
+                </div>                
         </div>
     </PageTypeContext.Provider>
   

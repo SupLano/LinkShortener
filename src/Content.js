@@ -83,9 +83,8 @@ export default function Page() {
   return (
     <>
     {
-      
-     
-      <div className={'w-6/6 item justify-between bg-white py-10  rounded-b shadow-lg overflow-x-hidden'}>
+          
+      <div className={'w-6/6 item justify-between bg-white py-10  rounded-b shadow-lg overflow-x-hidden relative'}>
       <div className={'text-2xl text-center font-semibold font-EB pb-10 tracking-wide'}>
           {PageType ? 'Simple   Link   Shortener' : 'Reveal Link (Code)'}
       </div>
@@ -114,7 +113,6 @@ export default function Page() {
         <p className={'py-10 font-thin italic'}>Share shortened link on socials</p>
       </div>
 
-      
       </div>
 
     }
