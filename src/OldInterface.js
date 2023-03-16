@@ -4,12 +4,6 @@ import { FaClipboard, FaTwitter, FaFacebookF, FaWhatsapp} from "react-icons/fa";
 import * as variable from './variable'
 import validator from 'validator';
 function App() {
-
-  useEffect(() => {
-    InputBox.current.focus()
-    setError(false)
-  }, [])
-
   const [placeholder, setPlaceholder] = useState(variable.placeholder_true)
   const [opacity, setOpacity] = useState(variable.opacity_true)
   const [page, setPage] = useState(variable.pageTrue)
@@ -18,6 +12,15 @@ function App() {
   const [error, setError] = useState(false)
   const [get, setGet] = useState('short')
 
+  const InputBox = useRef()
+  const ResultBox = useRef()
+  const CopyBox = useRef()
+
+  useEffect(() => {
+    InputBox.current.focus()
+    setError(false)
+  }, [])
+ 
   const setFalse = () => {
     // InputBox.current.value= null
     // ResultBox.current.value = null
@@ -33,10 +36,6 @@ function App() {
     setPage(variable.pageTrue)
     setGet('short')
   }
-
-  const InputBox = useRef()
-  const ResultBox = useRef()
-  const CopyBox = useRef()
    
   const handleInput = () =>{
     ResultBox.current.value = null
@@ -71,6 +70,13 @@ function App() {
     ResultBox.current.value ? navigator.clipboard.writeText(ResultBox.current.value) : setError(true)
   }
 
+  const shareOnFacebook = (evt) =>{
+    evt.preventDefault()
+    console.log('sharing on facebook')
+    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + 'https://github.com/knoldus/angular-facebook-twitter.git';
+    window.open(navUrl , '_blank');
+  }
+
   return (
     <div className="App h-screen bg-gradient-to-b from-black via-cyan-900 flex overflow-x-hidden">
           <div className={'w-4/5 h-3/4 bg-gray-200 bg-opacity-70 mx-auto my-auto py-4 md:pt-20 rounded-r rounded-b shadow-lg relative'}>
@@ -99,7 +105,7 @@ function App() {
 
                 <div className={opacity}>
                   <div className={'flex justify-evenly'}>
-                    <FaTwitter color={'skyblue'} className={'h-10 w-10 opacity- cursor-pointer'}/>
+                    <FaTwitter color={'skyblue'} className={'h-10 w-10 opacity- cursor-pointer'} onClick={shareOnFacebook}/>
                     <FaFacebookF color='darkblue' className={'h-10 w-10 opacity- cursor-pointer'}/>
                     <FaWhatsapp color='green' className={'h-10 w-10 opacity- cursor-pointer'}/>            
                   </div>

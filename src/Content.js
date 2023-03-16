@@ -67,6 +67,19 @@ export default function Page() {
     }, 200);
   }
   
+  const shareOnFacebook = (social) =>{
+    const FacebookUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + ResultBox.current.value;
+    window.open(FacebookUrl, '_blank');
+  }
+  const shareOnTwitter = () =>{
+    const TwitterUrl ='https://twitter.com/intent/tweet?text=' + ResultBox.current.value;
+    window.open(TwitterUrl, '_blank');
+  }
+  const shareOnWhatsapp = () =>{
+    const WhatsappUrl = `whatsapp://send?text=${ResultBox.current.value}`
+    window.open(WhatsappUrl, '_blank');
+  }
+
   return (
     <>
     {
@@ -94,9 +107,9 @@ export default function Page() {
       
       <div className={'text-center py-8 mt-10 bg-bue-600'}>
         <div className={resultIn ? 'flex justify-center gap-16 text-center py-4 bg-re-300' : 'flex justify-center gap-16 text-center py-4 bg-re-300 opacity-90'}>
-          <FaFacebookF color='darkblue' className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>
-          <FaWhatsapp color='green' className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>            
-          <FaTwitter color={'skyblue'} className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>
+          <FaFacebookF color='darkblue' onClick={resultIn && shareOnFacebook} className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>
+          <FaWhatsapp color='green' onClick={resultIn && shareOnWhatsapp} className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>            
+          <FaTwitter color={'skyblue'} onClick={resultIn && shareOnTwitter} className={resultIn ? 'h-10 w-10 cursor-pointer opacity-100' : 'h-10 w-10 opacity-30'}/>
         </div>
         <p className={'py-10 font-thin italic'}>Share shortened link on socials</p>
       </div>
