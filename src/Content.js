@@ -92,7 +92,7 @@ export default function Page() {
       <div className={'py-6 pb-10 md:pb-0 px-2 flex flex-wrap justify-center gap-5 mx-auto w-5/6 text-center'}>
           <input ref={InputRef} placeholder = {PageType ? 'Enter link...':'Enter code to reveal link...'}  onInput={handleInput} className={'rounded placeholder:text-left placeholder:font-sans placeholder:text-sm  placeholder:font-extralight placeholder:tracking-widest placeholder:text-black text-black font-bold bg-gray basis-full md:basis-0 flex-1 bg-gra-50 opacity-40 bg-gray-200  outline-none p-2'}></input>
           <div onClick={handleSubmit} className={'submit rounded border-2 text-white py-1 px-4 cursor-pointer outline-none font-Chakra  bg-gray-800 hover:bg-teal-500'}>Submit</div>
-          {error && <div className={'basis-full absolute top-20 md:top-5 text-center text-red-400 italic animate-bounce'}>{PageType ? '*  Please enter a valid URL*' : '*  Please enter a valid Code*'   }</div>}
+          {error && <div className={'basis-full absolute top-24 md:top-5 text-center text-red-400 italic animate-bounce'}>{PageType ? '*  Please enter a valid URL*' : '*  Please enter a valid Code*'   }</div>}
       </div>
       
       <div className={'text-center w-4/5 md:w-3/5 mx-auto flex justify-center gap-2 py-10 bg-teal-5 rounded-lg'}>
